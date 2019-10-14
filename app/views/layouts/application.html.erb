@@ -2,38 +2,16 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-   
+  <%= render 'layouts/rails_default'%>
+<%= render 'layouts/shim' %>   
     </head>
 
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to "Sample App", '#' , id:"logo" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home",'#',class:"nav-item" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Help", '#' %>
-      </li>
-      <li class="nav-item">
-      <%= link_to "Login", '#' %>
-      </li>
-    </ul>
-
-  </div>
-</nav>
+  <%= render 'layouts/nav' %>
 <div class="container" >
     <%= yield %>
 </div>
+<%= render 'layouts/footer' %>
   </body>
 </html>
